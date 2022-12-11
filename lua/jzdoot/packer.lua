@@ -18,4 +18,5 @@ return require('packer').startup(function(use)
 	use 'ThePrimeagen/vim-be-good'
 	use 'neovim/nvim-lspconfig'
 	use 'mfussenegger/nvim-jdtls'
+	use 'kyazdani42/nvim-web-devicons'
 end)
