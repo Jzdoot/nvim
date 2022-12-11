@@ -1,0 +1,21 @@
+vim.cmd [[packadd packer.nvim]]
+return require('packer').startup(function(use)
+	use 'wbthomason/packer.nvim'
+  -- use 'NTBBloodbath/doom-one.nvim'
+	use 'romgrk/doom-one.vim'
+	use 'tpope/vim-commentary'
+	use 'ap/vim-css-color'
+	use 'nvim-lua/plenary.nvim'
+	use 'nvim-telescope/telescope.nvim'
+	use 'vim-airline/vim-airline'
+	use 'vim-airline/vim-airline-themes'
+	use 'mbbill/undotree'
+	use 'andweeb/presence.nvim'
+	use 'lervag/vimtex'
+	use 'lambdalisue/battery.vim'
+	use 'sophacles/vim-processing'
+	use 'wakatime/vim-wakatime'
+	use 'ThePrimeagen/vim-be-good'
+	use 'neovim/nvim-lspconfig'
+	use 'mfussenegger/nvim-jdtls'
+end)

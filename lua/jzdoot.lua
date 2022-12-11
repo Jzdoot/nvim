@@ -1,6 +1,0 @@
-require('jzdoot.telescope')
-require('jzdoot.treesitter')
-require('jzdoot.presence')
--- require('jzdoot.harpoon')
--- require('jzdoot.todo')
--- require('jzdoot.trouble')
