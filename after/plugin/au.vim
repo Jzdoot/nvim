@@ -1,13 +1,13 @@
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " no auto comment on new line
-aug java
-	au!
-	au FileType java set signcolumn=yes
-	au FileType java :vim TODO %
-	au Filetype java map <leader>r :vsp<CR> :terminal javar Main<CR>
-	au Filetype java map <leader>R :WakaTimeDebugEnable<CR> :vsp<CR> :terminal javad Main<CR>
-	au Filetype java map <leader>d :WakaTimeDebugEnable<CR>
-	au Filetype java map <leader>d :WakaTimeDebugDisable<CR>
-aug end
+" aug java
+" 	au!
+" 	au FileType java set signcolumn=yes
+" 	au FileType java :vim TODO %
+" 	au Filetype java map <leader>r :vsp<CR> :terminal javar Main<CR>
+" 	au Filetype java map <leader>R :WakaTimeDebugEnable<CR> :vsp<CR> :terminal javad Main<CR>
+" 	au Filetype java map <leader>d :WakaTimeDebugEnable<CR>
+" 	au Filetype java map <leader>d :WakaTimeDebugDisable<CR>
+" aug end
 aug processing
 	au Filetype processing set signcolumn=yes
 	au Filetype processing map <leader>r :make<CR>

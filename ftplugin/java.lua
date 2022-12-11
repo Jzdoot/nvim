@@ -1,5 +1,6 @@
-local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = '~/git/ibcshly2/Lab/' .. project_name
+local nnoremap = require("jzdoot.keymap").nnoremap
+-- local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+-- local workspace_dir = '~/git/ibcshly2/Lab/' .. project_name
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
   -- The command that starts the language server
@@ -21,7 +22,7 @@ local config = {
     '-configuration', '/opt/homebrew/Cellar/jdtls/1.18.0/libexec/config_mac',
     -- 💀
     -- See `data directory configuration` section in the README
-    '-data', workspace_dir
+    -- '-data', workspace_dir
   },
 
   -- 💀
@@ -50,3 +51,11 @@ local config = {
   },
 }
 require('jdtls').start_or_attach(config)
+
+
+-- vim.o.signcolumn = yes
+-- vim.cmd(vim TODO %)
+-- nnoremap("<leader>r", "<cmd>vsp<CR> :terminal javar Main<CR>")
+-- nnoremap("<leader>R", "<cmd>WakaTimeDebugEnable<CR> :vsp<CR> :terminal javad Main<CR>")
+-- nnoremap("<leader>d","<cmd>WakaTimeDebugEnable<CR>")
+-- nnoremap("<leader>d", "<cmd>WakaTimeDebugDisable<CR>")

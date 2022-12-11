@@ -19,4 +19,7 @@ return require('packer').startup(function(use)
 	use 'neovim/nvim-lspconfig'
 	use 'mfussenegger/nvim-jdtls'
 	use 'kyazdani42/nvim-web-devicons'
+	use {'nvim-treesitter/nvim-treesitter',run = ':TSUpdate'}
+	-- use 'nvim-treesitter/nvim-treesitter'
+	use 'nvim-treesitter/playground'
 end)
