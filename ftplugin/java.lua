@@ -53,9 +53,8 @@ local config = {
 require('jdtls').start_or_attach(config)
 
 
--- vim.o.signcolumn = yes
--- vim.cmd(vim TODO %)
--- nnoremap("<leader>r", "<cmd>vsp<CR> :terminal javar Main<CR>")
--- nnoremap("<leader>R", "<cmd>WakaTimeDebugEnable<CR> :vsp<CR> :terminal javad Main<CR>")
--- nnoremap("<leader>d","<cmd>WakaTimeDebugEnable<CR>")
--- nnoremap("<leader>d", "<cmd>WakaTimeDebugDisable<CR>")
+vim.o.signcolumn = yes
+nnoremap("<leader>r", "<cmd>vsp<CR> :terminal javar Main<CR>")
+nnoremap("<leader>R", "<cmd>WakaTimeDebugEnable<CR> :vsp<CR> :terminal javad Main<CR>")
+nnoremap("<leader>d","<cmd>WakaTimeDebugEnable<CR>")
+nnoremap("<leader>d", "<cmd>WakaTimeDebugDisable<CR>")
