@@ -89,6 +89,7 @@ let g:airline_theme='minimalist'
 set termguicolors
 let g:airline#extensions#battery#enabled = 1
 let g:airline#extensions#vimtex#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 " FZF Stuff 
 let g:fzf_layout = { 'down': '35%'} "setting fzf to open in a new buffer below
 " Vimtex
@@ -104,7 +105,7 @@ aug end
 aug java
 	au!
 	au FileType java set signcolumn=yes
-	au FileType java :vim TODO %
+	" au FileType java :vim TODO %
 	au Filetype java map <leader>r :vsp<CR> :terminal javar Main<CR>
 	au Filetype java map <leader>R :WakaTimeDebugEnable<CR> :vsp<CR> :terminal javad Main<CR>
 	au Filetype java map <leader>d :WakaTimeDebugEnable<CR>
@@ -148,7 +149,6 @@ aug firenvim
 	au!
 	au BufEnter github.com_*.txt set filetype=markdown
 	au BufEnter replit.com_*.txt set filetype=java
-	au BufEnter _*.txt let g:airline#extensions#tabline#enabled = 0
 aug end
 let g:javascript_plugin_flow = 1
 filetype plugin indent on
