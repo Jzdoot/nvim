@@ -1,6 +1,6 @@
 local nnoremap = require("jzdoot.keymap").nnoremap
--- local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
--- local workspace_dir = '~/git/ibcshly2/Lab/' .. project_name
+local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+local workspace_dir = '.workspace' .. project_name
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
   -- The command that starts the language server
@@ -22,14 +22,14 @@ local config = {
     '-configuration', '/opt/homebrew/Cellar/jdtls/1.18.0/libexec/config_mac',
     -- 💀
     -- See `data directory configuration` section in the README
-    -- '-data', workspace_dir
+    '-data', workspace_dir
   },
 
   -- 💀
   -- This is the default if not provided, you can remove it. Or adjust as needed.
   -- One dedicated LSP server & client will be started per unique root_dir
-  -- root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'}),
-  root_dir = require('jdtls.setup').find_root({'.'}),
+  root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'}),
+  -- root_dir = require('jdtls.setup').find_root({'.'}),
 
   -- Here you can configure eclipse.jdt.ls specific settings
   -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
