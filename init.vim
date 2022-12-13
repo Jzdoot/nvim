@@ -60,7 +60,7 @@ Plug 'sophacles/vim-processing'
 Plug 'wakatime/vim-wakatime'
 Plug 'ellisonleao/glow.nvim'
 Plug 'ThePrimeagen/vim-be-good'
-" Plug 'ThePrimeagen/harpoon'
+Plug 'ThePrimeagen/harpoon'
 
 call plug#end()
 "firenvim
@@ -156,6 +156,7 @@ set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 " Keybinds
 map <space>. :Telescope find_files<CR>
 map <space>m :Telescope harpoon marks<CR>
+map <space>g :Telescope live_grep<CR>
 "buffer switching
 " map <space>1 :buffer 1<CR>
 " map <space>2 :buffer 2<CR>
@@ -197,8 +198,8 @@ map <leader>j <plug>(coc-definition)
 map <leader>J <plug>(coc-declaration)
 map<C-d> <C-d>zz
 map <C-c> <C-c>zz
-" map <leader>m :lua require("harpoon.mark").add_file()<CR>
-" map <leader>M :lua require("harpoon.ui").toggle_quick_menu()<CR>
+map <leader>m :lua require("harpoon.mark").add_file()<CR>
+map <leader>M :lua require("harpoon.ui").toggle_quick_menu()<CR>
 "Aliases
 command! -nargs=* W w
 command! -nargs=* Wq wq
