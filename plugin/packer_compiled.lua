@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/doom-one.vim",
     url = "https://github.com/romgrk/doom-one.vim"
   },
+  harpoon = {
+    loaded = true,
+    path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/THePrimeagen/harpoon"
+  },
   ["nvim-jdtls"] = {
     loaded = true,
     path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/nvim-jdtls",

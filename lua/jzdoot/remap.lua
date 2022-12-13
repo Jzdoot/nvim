@@ -3,7 +3,8 @@ local nnoremap = require("jzdoot.keymap").nnoremap
 vim.g.mapleader = ";"
 
 nnoremap("<space>.", "<cmd>lua require('telescope.builtin').find_files()<cr>")
--- nnoremap("<space>m", "<cmd>Telescope harpoon marks<CR>")
+nnoremap("<space>m", "<cmd>Telescope harpoon marks<CR>")
+nnoremap("<space>g", "<cmd>Telescope live_grep<CR>")
 nnoremap("<leader>.", "<cmd>Telescope find_files<CR>")
 nnoremap("<leader>t", "<cmd>term<CR>")
 nnoremap("<leader>T", "<cmd>vsp<CR> :term<CR>")
@@ -28,5 +29,5 @@ nnoremap("<leader>gs", "<cmd>G<CR>")
 nnoremap("<leader>u", "<cmd>lua package.loaded.presence:update()<CR>")
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-c>", "<C-c>zz")
--- nnoremap("<leader>m", "<cmd>lua require("harpoon.mark").add_file()<CR>")
--- nnoremap("<leader>M", "<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>")
+nnoremap("<leader>m", "<cmd>lua require("harpoon.mark").add_file()<CR>")
+nnoremap("<leader>M", "<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>")
