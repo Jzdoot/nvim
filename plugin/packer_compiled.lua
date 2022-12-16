@@ -87,7 +87,7 @@ _G.packer_plugins = {
   harpoon = {
     loaded = true,
     path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/harpoon",
-    url = "https://github.com/THePrimeagen/harpoon"
+    url = "https://github.com/ThePrimeagen/harpoon"
   },
   ["nvim-jdtls"] = {
     loaded = true,
