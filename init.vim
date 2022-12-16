@@ -61,6 +61,7 @@ Plug 'wakatime/vim-wakatime'
 Plug 'ellisonleao/glow.nvim'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'ThePrimeagen/harpoon'
+Plug 'dbeniamine/cheat.sh-vim'
 
 call plug#end()
 "firenvim
@@ -82,7 +83,7 @@ let g:firenvim_config = {
     \ }
 \ }
 " Netrw
-let g:netrw_liststyle=3
+" let g:netrw_liststyle=3
 colorscheme doom-one
 " Airline stuff
 let g:airline_theme='minimalist'
