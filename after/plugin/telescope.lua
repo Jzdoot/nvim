@@ -1,4 +1,3 @@
-local nnoremap = require("jzdoot.keymap").nnoremap
 require('telescope').setup{
   defaults = {
     -- Default configuration for telescope goes here:
@@ -32,7 +31,7 @@ require('telescope').setup{
 }
 require("telescope").load_extension('harpoon')
 -- require('telescope').load_extension('fzf')
-nnoremap("<space>.", "<cmd>lua require('telescope.builtin').find_files()<cr>")
-nnoremap("<space>m", "<cmd>Telescope harpoon marks<CR>")
-nnoremap("<space>g", "<cmd>Telescope live_grep<CR>")
-nnoremap("<leader>.", "<cmd>Telescope find_files<CR>")
+vim.keymap.set("n","<space>.", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+vim.keymap.set("n","<space>m", "<cmd>Telescope harpoon marks<CR>")
+vim.keymap.set("n","<space>g", "<cmd>Telescope live_grep<CR>")
+vim.keymap.set("n","<leader>.", "<cmd>Telescope find_files<CR>")

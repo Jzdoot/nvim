@@ -1,15 +1,11 @@
+require('orgmode').setup_ts_grammar()
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "javascript", "phpdoc" }, -- List of parsers to ignore installing
+  ensure_installed = {"lua","java","org"},
+  sync_install = false,
+  auto_install = true,
   highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = { "c", "rust" },  -- list of language that will be disabled
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
+    enable = true,
+    additional_vim_regex_highlighting = {'org'},
   },
   playground = {
 	enable = true,

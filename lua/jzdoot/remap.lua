@@ -1,27 +1,33 @@
-local nnoremap = require("jzdoot.keymap").nnoremap
-
 vim.g.mapleader = ";"
 
-nnoremap("<leader>t", "<cmd>term<CR>")
-nnoremap("<leader>T", "<cmd>vsp<CR> :term<CR>")
-nnoremap("<leader>l", "<cmd>tabnext<CR>")
-nnoremap("<leader>h", "<cmd>tabprevious<CR>")
-nnoremap("<leader>n", "<cmd>tabnew<CR>")
-nnoremap("<leader>N", "<cmd>tabclose<CR>")
-nnoremap("<leader>c", "<cmd>!code %:p:h<CR>")
-nnoremap("<leader>C", "<cmd>cd %:p:h<CR>")
-nnoremap("<leader>e", "<cmd>e ~/.config/nvim/init.vim<CR>")
-nnoremap("<leader><F10>uo", "<cmd>PlugUpdate<CR> :CocUpdate<CR> :TSUpdate<CR>")
-nnoremap("<leader><F10>so", "<cmd>source ~/.config/nvim/init.vim<CR>")
-nnoremap("<leader>`", "<cmd>Ex<CR>")
-nnoremap("<leader>~", "<cmd>vsp<CR> :Ex<CR>")
-nnoremap("<leader>z", "<cmd>UndotreeToggle<CR>")
-nnoremap("<leader>ga", "<cmd>G add")
-nnoremap("<leader>gaa", "<cmd>G add -A<CR>")
-nnoremap("<leader>gc", "<cmd>G commit<CR>")
-nnoremap("<leader>gp", "<cmd>G push")
-nnoremap("<leader>gpa", "<cmd>G push all<CR> :G push<CR>")
-nnoremap("<leader>gs", "<cmd>G<CR>")
-nnoremap("<leader>u", "<cmd>lua package.loaded.presence:update()<CR>")
-nnoremap("<C-d>", "<C-d>zz")
-nnoremap("<C-c>", "<C-c>zz")
+vim.keymap.set("n","<leader>t", "<cmd>term<CR>")
+vim.keymap.set("n","<leader>T", "<cmd>vsp<CR> :term<CR>")
+vim.keymap.set("n","<leader>c", "<cmd>!code %:p:h<CR>")
+vim.keymap.set("n","<leader>`", "<cmd>Ex<CR>")
+vim.keymap.set("n","<leader>~", "<cmd>vsp<CR> :Ex<CR>")
+vim.keymap.set("n","<leader>z", "<cmd>UndotreeToggle<CR>")
+vim.keymap.set("n","<C-d>", "<C-d>zz")
+vim.keymap.set("n","<C-c>", "<C-c>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- greatest remap ever
+vim.keymap.set("x", "<space>p", [["_dP]])
+
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
+
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+
+vim.keymap.set("n", "Q", "<nop>")
+
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
