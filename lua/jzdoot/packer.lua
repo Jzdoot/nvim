@@ -56,4 +56,5 @@ return require('packer').startup(function(use)
 		}
 	}
 	use 'sar/preview-csv.nvim'
+	use 'github/copilot.vim'
 end)

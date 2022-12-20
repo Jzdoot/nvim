@@ -10,6 +10,16 @@ lsp.ensure_installed({
   -- 'tsserver',
   -- 'eslint',
 })
+-- Fix Undefined global 'vim'
+lsp.configure('sumneko_lua', {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+})
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -69,6 +79,8 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
   vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
   vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+  -- vim.keymap.set("n", "<leader>ds", vim.cmd.Telescope(lsp_document_symbols)) --require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+  -- vim.keymap.set("n", '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 end)
 
 lsp.setup()
