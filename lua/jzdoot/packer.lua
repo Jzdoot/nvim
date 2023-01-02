@@ -8,8 +8,8 @@ return require('packer').startup(function(use)
 	use 'ap/vim-css-color'
 	use 'nvim-lua/plenary.nvim'
 	use 'nvim-telescope/telescope.nvim'
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
+	-- use 'vim-airline/vim-airline'
+	-- use 'vim-airline/vim-airline-themes'
 	use 'mbbill/undotree'
 	use 'andweeb/presence.nvim'
 	use 'lervag/vimtex'
@@ -57,4 +57,5 @@ return require('packer').startup(function(use)
 	}
 	use 'sar/preview-csv.nvim'
 	use 'github/copilot.vim'
+	use 'nvim-lualine/lualine.nvim'
 end)
