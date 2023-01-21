@@ -1,4 +1,3 @@
-require('orgmode').setup_ts_grammar()
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {"lua","java","org"},
   sync_install = false,

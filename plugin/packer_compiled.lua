@@ -129,12 +129,6 @@ _G.packer_plugins = {
     path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
-  ["headlines.nvim"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14headlines\frequire\0" },
-    loaded = true,
-    path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/headlines.nvim",
-    url = "https://github.com/lukas-reineke/headlines.nvim"
-  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -154,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -175,17 +174,6 @@ _G.packer_plugins = {
     path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["org-bullets.nvim"] = {
-    loaded = true,
-    path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/org-bullets.nvim",
-    url = "https://github.com/akinsho/org-bullets.nvim"
-  },
-  orgmode = {
-    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\forgmode\frequire\0" },
-    loaded = true,
-    path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/orgmode",
-    url = "https://github.com/nvim-orgmode/orgmode"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -201,15 +189,16 @@ _G.packer_plugins = {
     path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["pommodoro-clock.nvim"] = {
+    config = { "\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20pommodoro-clock\frequire\0" },
+    loaded = true,
+    path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/pommodoro-clock.nvim",
+    url = "https://github.com/jackMort/pommodoro-clock.nvim"
+  },
   ["presence.nvim"] = {
     loaded = true,
     path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/presence.nvim",
     url = "https://github.com/andweeb/presence.nvim"
-  },
-  ["preview-csv.nvim"] = {
-    loaded = true,
-    path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/preview-csv.nvim",
-    url = "https://github.com/sar/preview-csv.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -255,18 +244,19 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/vimtex",
     url = "https://github.com/lervag/vimtex"
+  },
+  vimwiki = {
+    loaded = true,
+    path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/vimwiki",
+    url = "https://github.com/vimwiki/vimwiki"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: orgmode
-time([[Config for orgmode]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\forgmode\frequire\0", "config", "orgmode")
-time([[Config for orgmode]], false)
--- Config for: headlines.nvim
-time([[Config for headlines.nvim]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14headlines\frequire\0", "config", "headlines.nvim")
-time([[Config for headlines.nvim]], false)
+-- Config for: pommodoro-clock.nvim
+time([[Config for pommodoro-clock.nvim]], true)
+try_loadstring("\27LJ\2\nA\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\20pommodoro-clock\frequire\0", "config", "pommodoro-clock.nvim")
+time([[Config for pommodoro-clock.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

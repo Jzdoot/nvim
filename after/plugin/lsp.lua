@@ -1,5 +1,7 @@
 -- FOR WHEN YOU STOP USING JAVA!!!!!
 local lsp = require("lsp-zero")
+local lspconfig = require 'lspconfig'
+local root_pattern = lspconfig.util.root_pattern
 
 lsp.preset("recommended")
 
@@ -20,6 +22,10 @@ lsp.configure('sumneko_lua', {
         }
     }
 })
+
+lspconfig.jdtls.setup{
+	root_dir = root_pattern(".git", "pom.xml"),
+}
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}

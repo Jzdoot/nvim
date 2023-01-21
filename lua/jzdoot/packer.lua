@@ -24,17 +24,17 @@ return require('packer').startup(function(use)
 	use 'nvim-treesitter/playground'
 	use 'ThePrimeagen/harpoon'
 	-- Org Mode
-	use {'nvim-orgmode/orgmode', config = function()
-		require('orgmode').setup{}
-	end
-	}
-	use {
-		'lukas-reineke/headlines.nvim',
-		config = function()
-			require('headlines').setup()
-		end,
-	}
-	use 'akinsho/org-bullets.nvim'
+	-- use {'nvim-orgmode/orgmode', config = function()
+	-- 	require('orgmode').setup{}
+	-- end
+	-- }
+	-- use {
+	-- 	'lukas-reineke/headlines.nvim',
+	-- 	config = function()
+	-- 		require('headlines').setup()
+	-- 	end,
+	-- }
+	-- use 'akinsho/org-bullets.nvim'
 	-- FOR WHEN YOU STOP USING JAVA!!
 	use {
 		'VonHeikemen/lsp-zero.nvim',
@@ -55,7 +55,18 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
-	use 'sar/preview-csv.nvim'
 	use 'github/copilot.vim'
 	use 'nvim-lualine/lualine.nvim'
+	use({
+		"jackMort/pommodoro-clock.nvim",
+		config = function()
+			require("pommodoro-clock").setup({
+				-- optional configuration
+			})
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+		}
+	})
+	use 'vimwiki/vimwiki'
 end)
