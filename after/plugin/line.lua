@@ -1,3 +1,6 @@
+local function pi()
+	return [[pi]]
+end
 require('lualine').setup {
 	options = {
 		icons_enabled = true,
@@ -21,7 +24,7 @@ require('lualine').setup {
 		lualine_a = {'mode'},
 		lualine_b = {'branch', 'diff', 'diagnostics'},
 		lualine_c = {'filename'},
-		lualine_x = {'filetype'},
+		lualine_x = {'filetype', pi},
 		lualine_y = {'progress', 'searchcount'},
 		lualine_z = {'location'}
 	},
