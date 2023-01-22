@@ -12,11 +12,11 @@ return pack.startup(function(use)
 	-- use 'vim-airline/vim-airline'
 	-- use 'vim-airline/vim-airline-themes'
 	use 'mbbill/undotree'
-	use 'andweeb/presence.nvim'
+	-- use 'andweeb/presence.nvim'
 	use 'lervag/vimtex'
-	use 'lambdalisue/battery.vim'
+	-- use 'lambdalisue/battery.vim'
 	use 'sophacles/vim-processing'
-	use 'wakatime/vim-wakatime'
+	-- use 'wakatime/vim-wakatime'
 	use 'ThePrimeagen/vim-be-good'
 	use 'neovim/nvim-lspconfig'
 	-- use 'mfussenegger/nvim-jdtls'
@@ -58,23 +58,16 @@ return pack.startup(function(use)
 	}
 	use 'github/copilot.vim'
 	use 'nvim-lualine/lualine.nvim'
-	use({
-		"jackMort/pommodoro-clock.nvim",
-		config = function()
-			require("pommodoro-clock").setup({
-				-- optional configuration
-			})
-		end,
-		requires = {
-			"MunifTanjim/nui.nvim",
-		}
-	})
-	-- use 'vimwiki/vimwiki'
-	-- Markdown
-	-- use 'ixru/nvim-markdown'
-	-- install without yarn or npm
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function() vim.fn["mkdp#util#install"]() end,
-	})
+	-- use({
+	-- 	"jackMort/pommodoro-clock.nvim",
+	-- 	config = function()
+	-- 		require("pommodoro-clock").setup({
+	-- 			-- optional configuration
+	-- 		})
+	-- 	end,
+	-- 	requires = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 	}
+	-- })
+	use 'vimwiki/vimwiki'
 end)
