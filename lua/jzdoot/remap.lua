@@ -1,10 +1,17 @@
 vim.g.mapleader = ";"
 
 vim.keymap.set("n","<leader>t", "<cmd>term<CR>")
-vim.keymap.set("n","<leader>T", "<cmd>vsp<CR> :term<CR>")
+vim.keymap.set("n","<leader>T", function ()
+	vim.cmd("vsplit")
+	vim.cmd("terminal")
+end)
 vim.keymap.set("n","<leader>c", "<cmd>!code %:p:h<CR>")
 vim.keymap.set("n","<leader>`", "<cmd>Ex<CR>")
-vim.keymap.set("n","<leader>~", "<cmd>vsp<CR> :Ex<CR>")
+vim.keymap.set("n","<leader>~", function ()
+	-- "<cmd>vsp<CR> :Ex<CR>"
+	vim.cmd("vsplit")
+	vim.cmd("Ex")
+end)
 vim.keymap.set("n","<leader>z", "<cmd>UndotreeToggle<CR>")
 vim.keymap.set("n","<C-d>", "<C-d>zz")
 vim.keymap.set("n","<C-c>", "<C-c>zz")
@@ -32,4 +39,4 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<space>t", "<cmd>e ~/org/todo.org<CR>")
+vim.keymap.set({"n", "v"},"`","~")
