@@ -24,17 +24,17 @@ return require('packer').startup(function(use)
 	use 'nvim-treesitter/playground'
 	use 'ThePrimeagen/harpoon'
 	-- Org Mode
-	-- use {'nvim-orgmode/orgmode', config = function()
-	-- 	require('orgmode').setup{}
-	-- end
-	-- }
+	use {'nvim-orgmode/orgmode', config = function()
+		require('orgmode').setup{}
+	end
+	}
 	-- use {
 	-- 	'lukas-reineke/headlines.nvim',
 	-- 	config = function()
 	-- 		require('headlines').setup()
 	-- 	end,
 	-- }
-	-- use 'akinsho/org-bullets.nvim'
+	use 'akinsho/org-bullets.nvim'
 	-- FOR WHEN YOU STOP USING JAVA!!
 	use {
 		'VonHeikemen/lsp-zero.nvim',
@@ -68,5 +68,14 @@ return require('packer').startup(function(use)
 			"MunifTanjim/nui.nvim",
 		}
 	})
-	use 'vimwiki/vimwiki'
+	-- use 'vimwiki/vimwiki'
+	-- Markdown
+	use 'ixru/nvim-markdown'
+	-- install without yarn or npm
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function() vim.fn["mkdp#util#install"]() end,
+	})
+
+	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)
