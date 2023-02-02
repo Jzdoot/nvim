@@ -30,3 +30,7 @@ vim.keymap.set("n", "<space>T",function ()
 	vim.cmd("vsplit")
 	vim.cmd("e ~/org/todo.org")
 end)
+vim.keymap.set("n", "<space><CR>", function ()
+	vim.o.mapleader = " "
+
+end)

@@ -1,5 +1,6 @@
+local pack = require('packer')
 vim.cmd [[packadd packer.nvim]]
-return require('packer').startup(function(use)
+return pack.startup(function(use)
 	use 'wbthomason/packer.nvim'
   -- use 'NTBBloodbath/doom-one.nvim'
 	use 'romgrk/doom-one.vim'
@@ -70,12 +71,10 @@ return require('packer').startup(function(use)
 	})
 	-- use 'vimwiki/vimwiki'
 	-- Markdown
-	use 'ixru/nvim-markdown'
+	-- use 'ixru/nvim-markdown'
 	-- install without yarn or npm
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = function() vim.fn["mkdp#util#install"]() end,
 	})
-
-	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)
