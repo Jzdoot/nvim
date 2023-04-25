@@ -57,6 +57,12 @@ return pack.startup(function(use)
 		}
 	}
 	use 'github/copilot.vim'
+	-- use "zbirenbaum/copilot.lua"
+	-- use {
+	-- 	"zbirenbaum/copilot-cmp",
+	-- 	after = { "copilot.lua" },
+	-- }
+
 	use 'nvim-lualine/lualine.nvim'
 	use({
 		"jackMort/pommodoro-clock.nvim",
@@ -71,10 +77,14 @@ return pack.startup(function(use)
 	})
 	-- use 'vimwiki/vimwiki'
 	-- Markdown
-	-- use 'ixru/nvim-markdown'
+	use 'ixru/nvim-markdown'
 	-- install without yarn or npm
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = function() vim.fn["mkdp#util#install"]() end,
 	})
+	use {
+		'glacambre/firenvim',
+		run = function() vim.fn['firenvim#install'](0) end
+	}
 end)

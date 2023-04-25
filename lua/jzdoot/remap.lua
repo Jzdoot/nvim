@@ -27,6 +27,9 @@ vim.keymap.set("x", "<space>p", [["_dP]])
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
+vim.keymap.set({"n", "v"}, "<leader>p", [["+p]])
+vim.keymap.set("n", "<leader>P", [["+P]])
+
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "Q", "<nop>")
@@ -40,3 +43,8 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set({"n", "v"},"`","~")
+
+vim.keymap.set("n", "<space><tab>", "I	<escape>")
+
+vim.keymap.set("n", "<c-w>n", "<c-w>w")
+vim.keymap.set("n", "<c-w><c-n>", "<c-w>w")

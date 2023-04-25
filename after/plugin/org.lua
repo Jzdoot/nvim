@@ -1,6 +1,6 @@
 require('orgmode').setup({
 	org_agenda_files = {'~/org'},
-	org_default_notes_file = '~/org/notes.org',
+	org_default_notes_file = '~/org/todo.org',
 })
 require("org-bullets").setup {
 	concealcursor = false, -- If false then when the cursor is on a line underlying characters are visible

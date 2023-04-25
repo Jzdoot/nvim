@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/doom-one.vim",
     url = "https://github.com/romgrk/doom-one.vim"
   },
+  firenvim = {
+    loaded = true,
+    path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/firenvim",
+    url = "https://github.com/glacambre/firenvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/jsamurin/.local/share/nvim/site/pack/packer/start/friendly-snippets",
