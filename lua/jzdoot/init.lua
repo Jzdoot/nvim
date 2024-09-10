@@ -1,4 +1,5 @@
 require("jzdoot.set")
-require("jzdoot.packer")
+-- require("jzdoot.packer")
 require("jzdoot.remap")
 require("jzdoot.au")
+require("jzdoot.lazy")
