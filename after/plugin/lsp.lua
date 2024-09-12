@@ -2,6 +2,17 @@ local lsp = require("lsp-zero")
 local lspconfig = require 'lspconfig'
 local root_pattern = lspconfig.util.root_pattern
 
+-- Fix Undefined global 'vim'
+lsp.configure('lua-language-server', {
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { 'vim','hs' }
+			}
+		}
+	}
+})
+
 	local lsp_attach = function(client, bufnr)
 		local opts = {buffer = bufnr}
 
