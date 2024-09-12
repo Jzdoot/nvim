@@ -18,8 +18,8 @@ vim.opt.rtp:prepend(lazypath)
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+-- vim.g.mapleader = " "
+-- vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -41,7 +41,12 @@ require("lazy").setup({
 	{"kyazdani42/nvim-web-devicons"},
 	{"nvim-treesitter/nvim-treesitter" , run = ":TSUpdate"},
 	{"nvim-treesitter/playground"},
-	{"ThePrimeagen/harpoon", branch = "harpoon2"},
+	-- {"ThePrimeagen/harpoon", branch = "harpoon2"},
+	{
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
+	},
 	{"neovim/nvim-lspconfig"},
 	{"VonHeikemen/lsp-zero.nvim", branch = "v4.x"},
 	{"williamboman/mason.nvim"},
