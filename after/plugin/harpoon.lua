@@ -1,34 +1,29 @@
-local ui = require("harpoon.ui")
-local mark = require("harpoon.mark")
+local harpoon = require("harpoon")
 
--- vim.keymap.set("n","<leader>m", "<cmd>lua require('harpoon.mark').add_file()<CR>")
-vim.keymap.set("n","<leader>m", function()
-	mark.add_file()
-	print("Add File")
-end)
--- vim.keymap.set("n","<leader>M", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>")
-vim.keymap.set("n","<leader>M", function()
-	ui.toggle_quick_menu()
-	print("Toggle UI")
-end)
-vim.keymap.set("n", "<space>h", function() ui.nav_file(1) end)
-vim.keymap.set("n", "<space>j", function() ui.nav_file(2) end)
-vim.keymap.set("n", "<space>k", function() ui.nav_file(3) end)
-vim.keymap.set("n", "<space>l", function() ui.nav_file(4) end)
+harpoon:setup()
 
-vim.keymap.set("n", "<space>H", function()
-	vim.cmd("vsplit")
-	ui.nav_file(1)
-end)
-vim.keymap.set("n", "<space>J", function()
-	vim.cmd("vsplit")
-	ui.nav_file(2)
-end)
-vim.keymap.set("n", "<space>K", function()
-	vim.cmd("vsplit")
-	ui.nav_file(3)
-end)
-vim.keymap.set("n", "<space>L", function()
-	vim.cmd("vsplit")
-	ui.nav_file(4)
-end)
+local conf = require("telescope.config").values
+local function toggle_telescope(harpoon_files)
+    local file_paths = {}
+    for _, item in ipairs(harpoon_files.items) do
+        table.insert(file_paths, item.value)
+    end
+
+    require("telescope.pickers").new({}, {
+        prompt_title = "Harpoon",
+        finder = require("telescope.finders").new_table({
+            results = file_paths,
+        }),
+        previewer = conf.file_previewer({}),
+        sorter = conf.generic_sorter({}),
+    }):find()
+end
+
+vim.keymap.set("n", "<leader>m", function() harpoon:list():add() end)
+vim.keymap.set("n", "<leader>M", function () harpoon.ui.toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set("n", "<space>m", function () toggle_telescope(harpoon:list()) end)
+
+vim.keymap.set("n", "<space>h", function () harpoon:list():select(1) end)
+vim.keymap.set("n", "<space>j", function () harpoon:list():select(2) end)
+vim.keymap.set("n", "<space>k", function () harpoon:list():select(3) end)
+vim.keymap.set("n", "<space>l", function () harpoon:list():select(4) end)

@@ -33,7 +33,7 @@ require('telescope').setup{
 require("telescope").load_extension('harpoon')
 -- require('telescope').load_extension('fzf')
 vim.keymap.set("n","<space>.", tele.find_files)
-vim.keymap.set("n","<space>m", "<cmd>Telescope harpoon marks<CR>")
+-- vim.keymap.set("n","<space>m", "<cmd>Telescope harpoon marks<CR>")
 vim.keymap.set("n","<space>g", tele.live_grep)
 vim.keymap.set("n","<space>i", tele.lsp_implementations)
 vim.keymap.set("n","<leader>h", tele.help_tags)
