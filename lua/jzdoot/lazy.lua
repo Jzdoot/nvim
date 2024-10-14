@@ -30,7 +30,10 @@ require("lazy").setup({
 	{"tpope/vim-fugitive"},
 	{"ap/vim-css-color"},
 	{"nvim-lua/plenary.nvim"},
-	{"nvim-telescope/telescope.nvim"},
+	{
+		'nvim-telescope/telescope.nvim', tag = '0.1.8',
+		dependencies = { 'nvim-lua/plenary.nvim' }
+	},
 	{"mbbill/undotree"},
 	{"andweeb/presence.nvim"},
 	{"lervag/vimtex"},
@@ -62,6 +65,7 @@ require("lazy").setup({
 	{"nvim-lualine/lualine.nvim"},
 	{"ixru/nvim-markdown"},
 	{"glacambre/firenvim", build = ":call firenvim#install(0)"},
+	{"paulfrische/mpd.nvim"},
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
