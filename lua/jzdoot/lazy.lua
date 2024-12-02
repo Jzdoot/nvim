@@ -37,7 +37,7 @@ require("lazy").setup({
 	{"mbbill/undotree"},
 	{"andweeb/presence.nvim"},
 	{"lervag/vimtex"},
-	{"lambdalisue/battery.vim"},
+	{"lambdalisue/vim-battery"},
 	{"sophacles/vim-processing"},
 	{"wakatime/vim-wakatime"},
 	{"ThePrimeagen/vim-be-good"},
@@ -62,10 +62,17 @@ require("lazy").setup({
 	{"hrsh7th/cmp-nvim-lua"},
 	{"L3MON4D3/LuaSnip"},
 	{"rafamadriz/friendly-snippets"},
-	{"nvim-lualine/lualine.nvim"},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { 'nvim-tree/nvim-web-devicons' }
+	},
 	{"ixru/nvim-markdown"},
 	{"glacambre/firenvim", build = ":call firenvim#install(0)"},
 	{"paulfrische/mpd.nvim"},
+	-- {
+	-- 	"epwalsh/obsidian.nvim",
+	-- 	dependencies = { 'nvim-lua/plenary.nvim'}
+	-- }
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.

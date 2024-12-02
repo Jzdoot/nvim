@@ -21,6 +21,7 @@ require('lualine').setup {
 		lualine_a = {'mode'},
 		lualine_b = {'branch', 'diff', 'diagnostics'},
 		lualine_c = {'filename'},
+		-- lualine_x = {'filetype','battery#component'},
 		lualine_x = {'filetype'},
 		lualine_y = {'progress', 'searchcount'},
 		lualine_z = {'location'}
