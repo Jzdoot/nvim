@@ -25,6 +25,11 @@ vim.opt.incsearch = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 
-vim.cmd("autocmd FileType * setlocal formatoptions=cl")
-
 vim.opt.termguicolors = true
+
+vim.cmd("autocmd FileType * setlocal formatoptions=cl")
+vim.cmd("command! -nargs=* W w")
+vim.cmd("command! -nargs=* Wq wq")
+vim.cmd("command! -nargs=* Wqa wqa")
+vim.cmd("command! -nargs=* Q q")
+vim.cmd("command! -nargs=* Qa qa")

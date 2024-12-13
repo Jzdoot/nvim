@@ -15,7 +15,7 @@ return {
 
 					},
 					extensions = {
-						harpoon
+
 					}
 				}
 			}
