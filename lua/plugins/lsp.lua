@@ -22,11 +22,12 @@ return {
 		},
 		config = function()
 			require("lspconfig").lua_ls.setup {}
-
-			vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end)
+			require("lspconfig").bashls.setup {}
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(args)
+					vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end)
+					vim.keymap.set("i", "<c-o>", "<c-x><c-o>")
 					local client = vim.lsp.get_client_by_id(args.data.client_id)
 					if not client then return end
 
