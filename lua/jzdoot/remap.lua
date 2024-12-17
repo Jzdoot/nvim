@@ -26,4 +26,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 vim.keymap.set("n", "<leader>x", "<cmd>.lua<CR>")
 
-vim.keymap.set("n", "<c-o>", "<c-x><c-i>")
+vim.keymap.set("n", "<c-n>", "<c-x><c-i>")
+
+--TODO: Quick fix time

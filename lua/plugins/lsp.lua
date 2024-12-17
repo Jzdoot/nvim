@@ -21,13 +21,19 @@ return {
 			}
 		},
 		config = function()
-			require("lspconfig").lua_ls.setup {}
-			require("lspconfig").bashls.setup {}
+			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			require("lspconfig").lua_ls.setup {
+				capabilities = capabilities
+			}
+			require("lspconfig").bashls.setup {
+				capabilities = capabilities
+			}
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(args)
 					vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end)
-					vim.keymap.set("i", "<c-o>", "<c-x><c-o>")
+					-- vim.keymap.set("i", "<c-n>", "<c-x><c-o>")
+					vim.keymap.set("n", "grd", vim.lsp.buf.definition, opts)
 					local client = vim.lsp.get_client_by_id(args.data.client_id)
 					if not client then return end
 

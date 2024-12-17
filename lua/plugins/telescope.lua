@@ -28,7 +28,7 @@ return {
 			local tele = require("telescope.builtin")
 			vim.keymap.set("n", "<space>.", tele.find_files)
 			-- vim.keymap.set("n", "<space>g", tele.live_grep)
-			require("jzdoot.telescope.multigrep").setup()
+			vim.keymap.set("n", "<space>gg", require("jzdoot.telescope.multigrep").live_multigrep)
 			vim.keymap.set("n", "<space>i", tele.lsp_implementations)
 			vim.keymap.set("n", "<space>gh", tele.help_tags)
 			vim.keymap.set("n", "<space>en", function()

@@ -4,7 +4,7 @@ local make_entry = require "telescope.make_entry"
 local conf = require "telescope.config".values
 local M = {}
 
-local live_multigrep = function(opts)
+M.live_multigrep = function(opts)
 	opts = opts or {}
 	opts.cwd = opts.cwd or vim.uv.cwd()
 
@@ -36,7 +36,7 @@ local live_multigrep = function(opts)
 	}
 
 	pickers.new(opts, {
-		debounce = 100,
+		debounce = 101,
 		prompt_title = "Multi Grep",
 		finder = finder,
 		previewer = conf.grep_previewer(opts),
@@ -44,8 +44,8 @@ local live_multigrep = function(opts)
 	}):find()
 end
 
-M.setup = function()
-	live_multigrep()
-end
+-- M.setup = function()
+-- 	live_multigrep()
+-- end
 
 return M
