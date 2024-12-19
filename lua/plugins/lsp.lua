@@ -2,6 +2,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
+			"hrsh7th/nvim-cmp",
 			{
 				"folke/lazydev.nvim",
 				ft = "lua", -- only load on lua files
