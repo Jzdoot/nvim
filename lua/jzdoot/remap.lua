@@ -28,4 +28,5 @@ vim.keymap.set("n", "<leader>x", "<cmd>.lua<CR>")
 
 vim.keymap.set("n", "<c-n>", "<c-x><c-i>")
 
+vim.keymap.set("v", "p", "pyy")
 --TODO: Quick fix time

@@ -28,6 +28,9 @@ return {
 			require("lspconfig").bashls.setup {
 				capabilities = capabilities
 			}
+			require("lspconfig").jqls.setup {
+				capabilities = capabilities
+			}
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(args)
