@@ -30,6 +30,16 @@ vim.keymap.set("v", "p", "pyy")
 
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 --running lua
-vim.keymap.set("n", "<space>x", "<cmd>.lua<CR>")
-vim.keymap.set("v", "<space>x", "<cmd>lua<CR>")
+vim.keymap.set("n", "<space>x", ":.lua<CR>")
+vim.keymap.set("v", "<space>x", ":lua<CR>")
+vim.keymap.set("n", "<space>X", ":%lua<CR>")
 --TODO: Quick fix time
+vim.keymap.set("n", "<leader>o", function()
+	if vim.bo[vim.api.nvim_get_current_buf()].ft == "qf" then
+		vim.cmd.cclose()
+	else
+		vim.cmd.copen()
+	end
+end)
+vim.keymap.set("n", "<leader>]", vim.cmd.cnext)
+vim.keymap.set("n", "<leader>[", vim.cmd.cprevious)

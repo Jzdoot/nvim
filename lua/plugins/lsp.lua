@@ -16,8 +16,12 @@ return {
 			},
 			{
 				"williamboman/mason.nvim",
+				dependencies = "williamboman/mason-lspconfig.nvim",
 				config = function()
 					require("mason").setup()
+					require("mason-lspconfig").setup {
+						ensure_installed = { "lua_ls", "bashls", "jsonls" },
+					}
 				end
 			}
 		},
@@ -29,7 +33,7 @@ return {
 			require("lspconfig").bashls.setup {
 				capabilities = capabilities
 			}
-			require("lspconfig").jqls.setup {
+			require 'lspconfig'.jsonls.setup {
 				capabilities = capabilities
 			}
 

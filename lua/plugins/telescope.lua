@@ -32,7 +32,6 @@ return {
 
 			local tele = require("telescope.builtin")
 			vim.keymap.set("n", "<space>.", tele.find_files)
-			-- vim.keymap.set("n", "<space>g", tele.live_grep)
 			vim.keymap.set("n", "<space>gg", require("jzdoot.custom.multigrep").live_multigrep)
 			vim.keymap.set("n", "<space>i", tele.lsp_implementations)
 			vim.keymap.set("n", "<space>gh", tele.help_tags)
