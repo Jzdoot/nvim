@@ -5,7 +5,8 @@ local state = {
 	},
 	editor = {
 		buf = -1,
-		win = -1
+		win = -1,
+		buf_name = "."
 	},
 	git = {
 		buf = -1,
@@ -59,6 +60,7 @@ local toggle_terminal = function()
 		if vim.bo[state.terminal.buf].buftype ~= "terminal" then
 			vim.cmd.term()
 		end
+		vim.keymap.set("n", "q", function() vim.api.nvim_win_hide(state.terminal.win) end, { buffer = true })
 	else
 		vim.api.nvim_win_hide(state.terminal.win)
 	end
@@ -69,6 +71,19 @@ vim.keymap.set({ "n", "t" }, "<space>tt", toggle_terminal)
 local toggle_editor = function()
 	if not vim.api.nvim_win_is_valid(state.editor.win) then
 		state.editor = create_floating_window({ buf = state.editor.buf })
+		vim.keymap.set("n", "q", function() vim.api.nvim_win_hide(state.editor.win) end, { buffer = true })
+		if vim.builtin.bufname(state.editor.buf) ~= state.editor.buf_name then
+			vim.cmd.e(state.editor.buf_name)
+		end
+		-- if vim.bo[state.editor.buf].buftype == "nofile" then
+		-- if state.editor.first == true then
+		-- 	vim.cmd.e(".")
+		-- state.editor.first = false
+		-- end
+		-- if state.editor.first_open then
+		-- 	vim.cmd("e .")
+		-- 	state.editor.first_open = false
+		-- end
 	else
 		vim.api.nvim_win_hide(state.editor.win)
 	end
@@ -82,6 +97,7 @@ local toggle_git = function()
 		if vim.bo[state.git.buf].ft ~= "fugitive" then
 			vim.cmd("0Git")
 		end
+		vim.keymap.set("n", "q", function() vim.api.nvim_win_hide(state.git.win) end, { buffer = true })
 	else
 		vim.api.nvim_win_hide(state.git.win)
 	end

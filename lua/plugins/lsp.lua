@@ -41,7 +41,7 @@ return {
 				callback = function(args)
 					vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end)
 					-- vim.keymap.set("i", "<c-n>", "<c-x><c-o>")
-					vim.keymap.set("n", "grd", vim.lsp.buf.definition, opts)
+					vim.keymap.set("n", "grd", vim.lsp.buf.definition)
 					local client = vim.lsp.get_client_by_id(args.data.client_id)
 					if not client then return end
 
