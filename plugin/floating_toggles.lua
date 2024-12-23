@@ -6,7 +6,6 @@ local state = {
 	editor = {
 		buf = -1,
 		win = -1,
-		buf_name = "."
 	},
 	git = {
 		buf = -1,
@@ -61,6 +60,7 @@ local toggle_terminal = function()
 			vim.cmd.term()
 		end
 		vim.keymap.set("n", "q", function() vim.api.nvim_win_hide(state.terminal.win) end, { buffer = true })
+		vim.keymap.set("n", "<esc><esc>", function() vim.api.nvim_win_hide(state.terminal.win) end, { buffer = true })
 	else
 		vim.api.nvim_win_hide(state.terminal.win)
 	end
@@ -69,23 +69,22 @@ vim.api.nvim_create_user_command("Floaterminal", toggle_terminal, {})
 vim.keymap.set({ "n", "t" }, "<space>tt", toggle_terminal)
 
 local toggle_editor = function()
+	local function close()
+		state.editor.buf = vim.api.nvim_win_get_buf(state.editor.win)
+		vim.keymap.del("n", "q")
+		vim.keymap.del("n", "<esc><esc>")
+		vim.keymap.set("n", "q", "q")
+		vim.api.nvim_win_hide(state.editor.win)
+	end
 	if not vim.api.nvim_win_is_valid(state.editor.win) then
 		state.editor = create_floating_window({ buf = state.editor.buf })
-		vim.keymap.set("n", "q", function() vim.api.nvim_win_hide(state.editor.win) end, { buffer = true })
-		if vim.builtin.bufname(state.editor.buf) ~= state.editor.buf_name then
-			vim.cmd.e(state.editor.buf_name)
+		vim.keymap.set("n", "q", close)
+		vim.keymap.set("n", "<esc><esc>", close)
+		if vim.api.nvim_buf_get_name(state.editor.buf) == "" then
+			vim.cmd("Oil")
 		end
-		-- if vim.bo[state.editor.buf].buftype == "nofile" then
-		-- if state.editor.first == true then
-		-- 	vim.cmd.e(".")
-		-- state.editor.first = false
-		-- end
-		-- if state.editor.first_open then
-		-- 	vim.cmd("e .")
-		-- 	state.editor.first_open = false
-		-- end
 	else
-		vim.api.nvim_win_hide(state.editor.win)
+		close()
 	end
 end
 vim.api.nvim_create_user_command("Floatedit", toggle_editor, {})
@@ -98,6 +97,7 @@ local toggle_git = function()
 			vim.cmd("0Git")
 		end
 		vim.keymap.set("n", "q", function() vim.api.nvim_win_hide(state.git.win) end, { buffer = true })
+		vim.keymap.set("n", "<esc><esc>", function() vim.api.nvim_win_hide(state.git.win) end, { buffer = true })
 	else
 		vim.api.nvim_win_hide(state.git.win)
 	end

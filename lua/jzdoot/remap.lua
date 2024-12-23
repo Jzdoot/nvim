@@ -29,6 +29,14 @@ vim.keymap.set("n", "<c-n>", "<c-x><c-i>")
 vim.keymap.set("v", "p", "pyy")
 
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
+
+vim.keymap.set("n", "<f1>", function()
+	if vim.bo.ft == "help" then
+		vim.cmd("q")
+	else
+		vim.cmd("help")
+	end
+end)
 --running lua
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
 vim.keymap.set("v", "<space>x", ":lua<CR>")
