@@ -30,6 +30,8 @@ vim.keymap.set("v", "p", "pyy")
 
 vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
 
+vim.keymap.set({ "n", "i" }, "<esc>", "<esc>")
+
 vim.keymap.set("n", "<f1>", function()
 	if vim.bo.ft == "help" then
 		vim.cmd("q")
@@ -49,5 +51,5 @@ vim.keymap.set("n", "<leader>o", function()
 		vim.cmd.copen()
 	end
 end)
-vim.keymap.set("n", "<leader>]", vim.cmd.cnext)
-vim.keymap.set("n", "<leader>[", vim.cmd.cprevious)
+vim.keymap.set({ "n", "i" }, "<c-]>", vim.cmd.cnext)
+vim.keymap.set({ "n", "i" }, "<c-[>", vim.cmd.cprevious)

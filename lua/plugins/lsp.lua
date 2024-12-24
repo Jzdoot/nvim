@@ -20,7 +20,7 @@ return {
 				config = function()
 					require("mason").setup()
 					require("mason-lspconfig").setup {
-						ensure_installed = { "lua_ls", "bashls", "jsonls" },
+						ensure_installed = { "lua_ls", "bashls", "jsonls", "jdtls" },
 					}
 				end
 			}
@@ -36,12 +36,17 @@ return {
 			require 'lspconfig'.jsonls.setup {
 				capabilities = capabilities
 			}
+			require 'lspconfig'.jdtls.setup {
+				capabilities = capabilities
+			}
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(args)
+					local tele = require("telescope.builtin")
 					vim.keymap.set("n", "<leader>f", function() vim.lsp.buf.format() end)
-					-- vim.keymap.set("i", "<c-n>", "<c-x><c-o>")
-					vim.keymap.set("n", "grd", vim.lsp.buf.definition)
+					vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+					vim.keymap.set("n", "grd", tele.diagnostics)
+					vim.keymap.set("n", "grr", tele.lsp_references)
 					local client = vim.lsp.get_client_by_id(args.data.client_id)
 					if not client then return end
 

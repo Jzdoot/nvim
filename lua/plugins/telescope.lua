@@ -40,6 +40,7 @@ return {
 					cwd = vim.fn.stdpath("config")
 				}
 			end)
+			vim.keymap.set("n", "<space>o", tele.quickfix)
 		end
 	},
 }

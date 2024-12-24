@@ -37,9 +37,9 @@ local function create_floating_window(opts)
 		height = height,
 		col = col,
 		row = row,
-		anchor = 'NW', -- Anchor the window to the top-left corner
-		style = 'minimal', -- Make it non-intrusive
-		border = "rounded", -- Border style
+		anchor = 'NW',             -- Anchor the window to the top-left corner
+		style = opts.style or 'minimal', -- Make it non-intrusive
+		border = "rounded",        -- Border style
 	}
 
 	-- Open the floating window
@@ -77,7 +77,7 @@ local toggle_editor = function()
 		vim.api.nvim_win_hide(state.editor.win)
 	end
 	if not vim.api.nvim_win_is_valid(state.editor.win) then
-		state.editor = create_floating_window({ buf = state.editor.buf })
+		state.editor = create_floating_window({ buf = state.editor.buf, style = "" })
 		vim.keymap.set("n", "q", close)
 		vim.keymap.set("n", "<esc><esc>", close)
 		if vim.api.nvim_buf_get_name(state.editor.buf) == "" then
