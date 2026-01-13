@@ -27,18 +27,18 @@ return {
 		},
 		config = function()
 			local capabilities = require('cmp_nvim_lsp').default_capabilities()
-			require("lspconfig").lua_ls.setup {
+			vim.lsp.config('lua_ls', {
 				capabilities = capabilities
-			}
-			require("lspconfig").bashls.setup {
+			})
+			vim.lsp.config('bashls', {
 				capabilities = capabilities
-			}
-			require 'lspconfig'.jsonls.setup {
+			})
+			vim.lsp.config('jsonls', {
 				capabilities = capabilities
-			}
-			require 'lspconfig'.jdtls.setup {
+			})
+			vim.lsp.config('jdtls', {
 				capabilities = capabilities
-			}
+			})
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(args)
