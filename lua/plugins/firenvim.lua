@@ -2,26 +2,31 @@ return {
 	{
 		"glacambre/firenvim",
 		build = ":call firenvim#install(0)",
-		config = function ()
+		config = function()
 			vim.g.firenvim_config = {
-				globalSettings = { alt = "all"},
+				globalSettings = { alt = "all" },
 				localsettings = {
 					[".*"] = {
-						cmdline		= "neovim",
-						content		= "text",
-						priority	= 0,
+						cmdline  = "neovim",
+						content  = "text",
+						priority = 0,
 						-- selector	= "textarea",
-						takeover	= "never"
+						takeover = "never"
 					},
 					["https://replit.com/"] = {
-						priority	= 1,
-						takeover	= "never"
+						priority = 1,
+						takeover = "never"
+					},
+					["https://learn.zybooks.com/"] = {
+						priority = 1,
+						takeover = "never"
 					}
 				}
 			}
 
-			-- This is an example of how to do a specific website for firenvim and yes you have to use 
+			-- This is an example of how to do a specific website for firenvim and yes you have to use
 			vim.cmd("autocmd BufEnter github.com_*_.txt set ft=markdown")
+			vim.cmd("autocmd BufEnter zybooks.com_*_.txt set ft=python")
 		end
 	}
 }
