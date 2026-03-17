@@ -10,7 +10,10 @@ return {
 			poon:setup()
 
 			-- Base Keymaps
-			vim.keymap.set("n", "<leader>m", function() poon:list():add() end)
+			vim.keymap.set("n", "<leader>m", function()
+				poon:list():add()
+				print("Harpoon Added Item")
+			end)
 			vim.keymap.set("n", "<leader>M", function() poon.ui:toggle_quick_menu(poon:list()) end)
 
 			-- Basic Selection

@@ -4,20 +4,34 @@ return {
 		build = ":call firenvim#install(0)",
 		config = function()
 			vim.g.firenvim_config = {
+<<<<<<< Updated upstream
 				globalSettings = { alt = "all" },
+=======
+				globalSettings = {
+					alt = "all",
+					takeover = "once"
+				},
+>>>>>>> Stashed changes
 				localsettings = {
 					[".*"] = {
 						cmdline  = "neovim",
 						content  = "text",
 						priority = 0,
+<<<<<<< Updated upstream
 						-- selector	= "textarea",
+=======
+>>>>>>> Stashed changes
 						takeover = "never"
 					},
 					["https://replit.com/"] = {
 						priority = 1,
 						takeover = "never"
 					},
+<<<<<<< Updated upstream
 					["https://learn.zybooks.com/"] = {
+=======
+					["aleks.com"] = {
+>>>>>>> Stashed changes
 						priority = 1,
 						takeover = "never"
 					}
