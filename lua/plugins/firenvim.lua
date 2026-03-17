@@ -5,12 +5,18 @@ return {
 		config = function()
 			vim.g.firenvim_config = {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 				globalSettings = { alt = "all" },
 =======
+=======
+>>>>>>> Stashed changes
 				globalSettings = {
 					alt = "all",
 					takeover = "once"
 				},
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 				localsettings = {
 					[".*"] = {
@@ -18,7 +24,10 @@ return {
 						content  = "text",
 						priority = 0,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 						-- selector	= "textarea",
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 						takeover = "never"
@@ -28,7 +37,11 @@ return {
 						takeover = "never"
 					},
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 					["https://learn.zybooks.com/"] = {
+=======
+					["aleks.com"] = {
+>>>>>>> Stashed changes
 =======
 					["aleks.com"] = {
 >>>>>>> Stashed changes
